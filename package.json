@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "gh-pages": "^5.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "deploy": "gh-pages -d dlist"
+  },
+  "name": "test",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

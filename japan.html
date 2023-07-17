@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>hello
+		</title>
+            <link rel="stylesheet" href="styles.css">
+            <style>
+  .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .slideshow-container .slideshow-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  </style>
+	</head>
+	<body>
+        <div class="back-button">
+            <a href="index.html">&larr; Back</a>
+          </div>
+
+		<script type="module" src="/main.js"></script>
+        <div class="slideshow-container">
+            <div class="slideshow" id="slideshow"></div>
+          </div>
+          
+          <script>
+            const slideshowContainer = document.getElementById('slideshow');
+            const imageUrls = [
+              'https://drive.google.com/uc?id=1dxMBUoE45Y5_Dwtc5YlUdk1l2btWkOIz',
+              'https://drive.google.com/uc?id=1qKb5VSDyDJXAI8JHj3h2Xo0sxBwEkhuZ',
+              'https://drive.google.com/uc?id=1vwf2upVI-mwBl3uoBQDWZ-RdryBe5wNL',
+'https://drive.google.com/uc?id=1YRGVCoBS8pjtBgBJYHj1Rg_d6sZ-M0CW',
+'https://drive.google.com/uc?id=1XLwfOkz_UCNaxi5gVt7sfTlZLh4E85pf',
+'https://drive.google.com/uc?id=1eJvCyah07ELJdkaz-6Uk5DgS_Lw8z1dg',
+'https://drive.google.com/uc?id=1Vr5wpT6U-BeJILkBXwYg4KxEO_SavuKi',
+'https://drive.google.com/uc?id=1kzll4C99s21l_HFBbOGrssbBjfVmobwv',
+'https://drive.google.com/uc?id=1PNyPwvCX-BMlpWuaVRTgg8eBH61Kx8QM',
+'https://drive.google.com/uc?id=1Fx4mMaCFpWP1NS6yzMokq9BEdTcszFpZ',
+'https://drive.google.com/uc?id=1TDv0gZgruGPscp2NfKm1tEjWTg0KPgO0',
+'https://drive.google.com/uc?id=1B4mGMqplyvcMofIN_-KMr_9esVkOUlMl',
+'https://drive.google.com/uc?id=1BM8nYQWYoWSo47pkesoTyojyNNy0bWLD',
+'https://drive.google.com/uc?id=1uYoDbfbrV6Pgazx3PPG46-ab4nLpJh1-',
+'https://drive.google.com/uc?id=1nmfBVbbspQVwWPygitJJDZCHqkAIBtqt',
+'https://drive.google.com/uc?id=1VLD1Y44r1gRELHDQ-cPQT7dA2XdyLh14',
+'https://drive.google.com/uc?id=1LQtE3m3IIyCGGsbsqdHwlnBadF3F4Oq5',
+'https://drive.google.com/uc?id=1bO6dHRt4X5jwMSWO3wOhErq05LJ3jRLY',
+'https://drive.google.com/uc?id=11mJGiaCliMcing0s1cvt26nPq4OLwehN',
+'https://drive.google.com/uc?id=1QZEhdxxpxRHp40MfjyOiIFzjJ2i31TMy',
+'https://drive.google.com/uc?id=1xv01GDkO6rG9zmvlMaDYMET_MRRIUOjM',
+'https://drive.google.com/uc?id=1Q6Y2KE92bUMzgm5VRfQaIYCakADp1lvu',
+'https://drive.google.com/uc?id=1WELZmZsrq3YVyOCaighFCmmGUvhPROCp',
+'https://drive.google.com/uc?id=1KP00XjnSpUNLG5_Jvzc20LLxpTkuFbQ_',
+'https://drive.google.com/uc?id=19TYGxOjoR6KcbA6g8o4QD-9sBIfEp7Zd',
+'https://drive.google.com/uc?id=1bMGUleltFwEHuCS_PtMWSC6xKyNCY_Bt',
+'https://drive.google.com/uc?id=1HVIg4xR4p84EAqqIdI8P70BBmeyNZHFL',
+'https://drive.google.com/uc?id=1ohNJ1Jk2V8qmKDy9ZyUMQNxPEV3Xce_G',
+'https://drive.google.com/uc?id=1U96KoGNlVhjQyNfBEWH5B6TkHAHkS6lj',
+'https://drive.google.com/uc?id=1pL76xfaQvedX6dfM2YIvzRJPvnN-EY2E',
+'https://drive.google.com/uc?id=17ztC2x7nQZ76N_HyomaBBrAeIPa7oCyA',
+'https://drive.google.com/uc?id=1IS-3XeRETID7fNeY57WAWFXx_xviug6-',
+'https://drive.google.com/uc?id=1s4K8BzGhWw6l_7iLdb1Q4s1K24wlmq6M',
+'https://drive.google.com/uc?id=17GwzxBMaTTLChVZcPBmbdnClloE3OJnd',
+'https://drive.google.com/uc?id=1uCY-9iXubl93IXyg8lvM-CZLZ7h8r6dU',
+'https://drive.google.com/uc?id=1yyA9XnrU6yD_V7xI4ZirNekZ93qs6Diy',
+'https://drive.google.com/uc?id=1emBcwK9BwZgwyi_mQHt5SnYtxL-lmPbn',
+'https://drive.google.com/uc?id=1Fw87fobJm516AGostnThnP5dtNoq9Up9',
+'https://drive.google.com/uc?id=1DVpw0cbnTL1sO2i2bEe9meqGvdZ25cNi',
+'https://drive.google.com/uc?id=1-3xFT1fwn7HWhpDhVMSdDWUc83JgSiXO',
+'https://drive.google.com/uc?id=17q95QBS0Xu5v4kSQuQN-t-w56SUALTme',
+'https://drive.google.com/uc?id=1gmQhSv5wOZqmsBuHkCXVmxiLT3s0DKBB',
+'https://drive.google.com/uc?id=1EZKCKPZh6vPiUboM5LfZIgV2yQWNyibv',
+'https://drive.google.com/uc?id=12UFSyY6Sf8pLx50EPqj68r5Hz4CkJcDI',
+'https://drive.google.com/uc?id=1vT7ttbYXdRCRaZPz3ObzRDThw_TZEr8U',
+'https://drive.google.com/uc?id=1LYTExDwluwexpH1zVG3AbJW-P67PLFdr',
+'https://drive.google.com/uc?id=1-zzoSSmlaLEmLzXwPhwn3yvJ9meRKYgV',
+'https://drive.google.com/uc?id=1hTMAh13jNNMRItbtEAYz6xx4wnB5eBtd',
+'https://drive.google.com/uc?id=1Qka_-In3oduDqT1GVL-ksnnfqv86MBtY',
+'https://drive.google.com/uc?id=1XJlVflJi8H732xXCS_pTlJOe4303RZFX',
+'https://drive.google.com/uc?id=1q_u_OhEwiF4KnLZL8OTe_0pUlGX8UrIf',
+'https://drive.google.com/uc?id=1CotbPH5Rx3jG7AGIilISNgIqpWWYSl2E',
+'https://drive.google.com/uc?id=1bEQY9M5JWUwEzXWuPYf8tJNNzUp6KTZD',
+'https://drive.google.com/uc?id=1prkgkhkb5WaA9wj0wZefzZ5SQaM2ohFp',
+'https://drive.google.com/uc?id=1WZqSROIYKYHtmhqY1gogEK9rsqzldkKW',
+'https://drive.google.com/uc?id=1j8l5m5SvvbtkI91VdRqfFrfVotAmoDqb',
+            ];
+            const images = [];
+          
+            function createImageElement(url) {
+              const img = document.createElement('img');
+              img.src = url;
+              img.classList.add('slideshow-img');
+              img.style.display = 'none';
+              return img;
+            }
+          
+            imageUrls.forEach((url) => {
+              const img = createImageElement(url);
+              images.push(img);
+              slideshowContainer.appendChild(img);
+            });
+          
+            let currentIndex = 0;
+          
+            function showNextImage() {
+              images[currentIndex].style.display = 'none';
+              currentIndex = (currentIndex + 1) % images.length;
+              images[currentIndex].style.display = 'block';
+            }
+          
+            function startSlideshow() {
+              setInterval(showNextImage, 3000);
+            }
+          
+            // Wait for all images to load before starting the slideshow
+            let loadedCount = 0;
+            images.forEach((img) => {
+              img.addEventListener('load', () => {
+                loadedCount++;
+                if (loadedCount === images.length) {
+                  startSlideshow();
+                }
+              });
+            });
+          
+            // Show the first image initially
+            images[currentIndex].style.display = 'block';
+          </script>
+          
+          
+	</body>
+</html>

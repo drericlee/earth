@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>hello
+		</title>
+            <link rel="stylesheet" href="styles.css">
+            <style>
+  .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .slideshow-container .slideshow-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  </style>
+	</head>
+	<body>
+        <div class="back-button">
+            <a href="index.html">&larr; Back</a>
+          </div>
+
+		<script type="module" src="/main.js"></script>
+        <div class="slideshow-container">
+            <div class="slideshow" id="slideshow"></div>
+          </div>
+          
+          <script>
+            const slideshowContainer = document.getElementById('slideshow');
+            const imageUrls = [
+              'https://drive.google.com/uc?id=1gbgefLHPh_kYiN9Ft16BrNpzlhDHiWn6',
+              'https://drive.google.com/uc?id=1Ic1FIoQvldSTsdXROnm8-9e8YfQrVLEu',
+              'https://drive.google.com/uc?id=1PIckSEIwK2mSC37LizaeoORLs4-W2pAw',
+              'https://drive.google.com/uc?id=1byZOOj9VsA4CMUlyr28pSnGqM4gT5Rwm',
+
+              'https://drive.google.com/uc?id=1gg7OtBNre7R360lUfRf2NG_-10ihL9l9',
+              'https://drive.google.com/uc?id=12xIW4-rqDGID3g2U5gJrt8iPD40LSWmY',
+              'https://drive.google.com/uc?id=1UNUUK3dzge8m8P1CdzrIHlkzsIbOyuf7',
+              'https://drive.google.com/uc?id=1lxTJ3EVI4YvY0Pj-_AFJfq4X1yjN7NZk',
+
+              'https://drive.google.com/uc?id=1Tph3PRv8NiXkNPJgpW59-Y1yEMlpsTgP',
+              'https://drive.google.com/uc?id=1iahsfN5JfoucoLTI6hbqHt174OQSQQFA',
+              'https://drive.google.com/uc?id=1UHYEp2_Mx94fAyGiQV_Bwy_2BLTDgw5b',
+              'https://drive.google.com/uc?id=1fch4tkOdPBRfCml5wyhmZusqBarUYMdI',
+            ];
+            const images = [];
+          
+            function createImageElement(url) {
+              const img = document.createElement('img');
+              img.src = url;
+              img.classList.add('slideshow-img');
+              img.style.display = 'none';
+              return img;
+            }
+          
+            imageUrls.forEach((url) => {
+              const img = createImageElement(url);
+              images.push(img);
+              slideshowContainer.appendChild(img);
+            });
+          
+            let currentIndex = 0;
+          
+            function showNextImage() {
+              images[currentIndex].style.display = 'none';
+              currentIndex = (currentIndex + 1) % images.length;
+              images[currentIndex].style.display = 'block';
+            }
+          
+            function startSlideshow() {
+              setInterval(showNextImage, 3000);
+            }
+          
+            // Wait for all images to load before starting the slideshow
+            let loadedCount = 0;
+            images.forEach((img) => {
+              img.addEventListener('load', () => {
+                loadedCount++;
+                if (loadedCount === images.length) {
+                  startSlideshow();
+                }
+              });
+            });
+          
+            // Show the first image initially
+            images[currentIndex].style.display = 'block';
+          </script>
+          
+          
+	</body>
+</html>
