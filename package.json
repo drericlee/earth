@@ -4,7 +4,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "deploy": "gh-pages -d dlist"
+    "deploy": "gh-pages -d dist"
   },
   "name": "test",
   "version": "1.0.0",
